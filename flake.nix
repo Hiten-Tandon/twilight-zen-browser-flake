@@ -69,7 +69,7 @@
           src = builtins.fetchTarball {
             url =
               "https://github.com/zen-browser/desktop/releases/download/${version}/zen.linux-${arch}.tar.xz";
-            sha256 = "0kh3494gms8sarzmp7fvx97xhw8r5p6f3qq7mspyql6nclmzc2fl";
+            sha256 = "1yalirapw81qmv74dqxgcakbz4mnfazli6hfm13m0cx7vyrgbgym";
           };
 
           nativeBuildInputs = [ makeWrapper copyDesktopItems wrapGAppsHook ];
