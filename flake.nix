@@ -4,9 +4,14 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    zen-browser = {
+      url =
+        "https://github.com/zen-browser/desktop/releases/download/twilight/zen.linux-x86_64.tar.xz";
+      flake = false;
+    };
   };
 
-  outputs = { nixpkgs, flake-utils, ... }:
+  outputs = { nixpkgs, flake-utils, zen-browser, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
@@ -66,12 +71,8 @@
           pname = pname;
           version = version;
 
-          src = builtins.fetchTarball {
-            url =
-              "https://github.com/zen-browser/desktop/releases/download/${version}/zen.linux-${arch}.tar.xz";
-          };
-
-          nativeBuildInputs = [ makeWrapper copyDesktopItems wrapGAppsHook ];
+          src = zen-browser;
+          nativeBuildInputs = [ makeWrapper copyDesktopItems wrapGAppsHook4 ];
 
           installPhase = ''
             mkdir -p $out/bin

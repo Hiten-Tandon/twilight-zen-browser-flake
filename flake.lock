@@ -37,7 +37,8 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "zen-browser": "zen-browser"
       }
     },
     "systems": {
@@ -53,6 +54,19 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "zen-browser": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1746496028,
+        "narHash": "sha256-DWAHGO7+u0JtC6fVCbOv+UxNLbCktI0uA1gH0tBr508=",
+        "type": "tarball",
+        "url": "https://github.com/zen-browser/desktop/releases/download/twilight/zen.linux-x86_64.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/zen-browser/desktop/releases/download/twilight/zen.linux-x86_64.tar.xz"
       }
     }
   },
