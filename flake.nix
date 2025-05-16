@@ -89,18 +89,36 @@
           ];
 
           installPhase = ''
-            mkdir -p $out/bin
-            cp -r $src/* $out/bin
-            install -D $src/browser/chrome/icons/default/default128.png $out/share/icons/hicolor/128x128/apps/zen.png
-            mkdir -p $out/share/applications
-            echo "[Desktop Entry]
-            Name=zen-browser
-            Exec=$out/bin/zen %u
-            Type=Application
-            MimeType=x-scheme-handler/http;x-scheme-handler/https;
+                        mkdir -p $out/bin
+                        cp -r $src/* $out/bin
+                        install -D $src/browser/chrome/icons/default/default128.png $out/share/icons/hicolor/128x128/apps/zen.png
+                        mkdir -p $out/share/applications
+                        echo "[Desktop Entry]
+            Name=Zen Browser
+            Exec=zen %u
             Icon=$out/share/icons/hicolor/128x128/apps/zen.png
+            Type=Application
+            MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;application/x-xpinstall;application/pdf;application/json;
+            StartupWMClass=zen-alpha
             Categories=Network;WebBrowser;
-            Terminal=false" > $out/share/applications/zen-browser.desktop
+            StartupNotify=true
+            Terminal=false
+            X-MultipleArgs=false
+            Keywords=Internet;WWW;Browser;Web;Explorer;
+            Actions=new-window;new-private-window;profilemanager;
+
+            [Desktop Action new-window]
+            Name=Open a New Window
+            Exec=zen %u
+
+            [Desktop Action new-private-window]
+            Name=Open a New Private Window
+            Exec=zen --private-window %u
+
+            [Desktop Action profilemanager]
+            Name=Open the Profile Manager
+            Exec=zen --ProfileManager %u
+            " > $out/share/applications/zen.desktop
           '';
 
           fixupPhase = ''
