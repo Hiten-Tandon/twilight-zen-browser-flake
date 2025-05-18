@@ -73,7 +73,6 @@
           ]);
         pname = "zen-browser";
         version = "twilight";
-        arch = nixpkgs.lib.strings.removeSuffix "-linux" system;
       in
       with pkgs;
       {
@@ -89,11 +88,11 @@
           ];
 
           installPhase = ''
-                        mkdir -p $out/bin
-                        cp -r $src/* $out/bin
-                        install -D $src/browser/chrome/icons/default/default128.png $out/share/icons/hicolor/128x128/apps/zen.png
-                        mkdir -p $out/share/applications
-                        echo "[Desktop Entry]
+            mkdir -p $out/bin
+            cp -r $src/* $out/bin
+            install -D $src/browser/chrome/icons/default/default128.png $out/share/icons/hicolor/128x128/apps/zen.png
+            mkdir -p $out/share/applications
+            echo "[Desktop Entry]
             Name=Zen Browser
             Exec=zen %u
             Icon=$out/share/icons/hicolor/128x128/apps/zen.png
