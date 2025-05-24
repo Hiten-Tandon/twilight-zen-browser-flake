@@ -84,7 +84,7 @@
           nativeBuildInputs = [
             makeWrapper
             copyDesktopItems
-            wrapGAppsHook4
+            wrapGAppsHook3
           ];
 
           installPhase = ''
