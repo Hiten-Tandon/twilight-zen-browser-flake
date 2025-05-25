@@ -148,7 +148,7 @@
       }
     ) // {
       overlay = (_: _: {
-        zen.x86_64-linux = self.packages.x86_64-linux.default;
+        zen = self.packages.x86_64-linux.default;
       });
     };
 }
