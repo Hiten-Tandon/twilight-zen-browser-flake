@@ -15,6 +15,7 @@
       nixpkgs,
       flake-utils,
       zen-browser,
+      self,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -75,7 +76,7 @@
         version = "twilight";
       in
       with pkgs;
-      {
+       {
         packages.default = stdenv.mkDerivation (finalAttrs: {
           pname = pname;
           version = version;
@@ -145,5 +146,9 @@
         });
         formatter = nixfmt-tree;
       }
-    );
+    ) // {
+      overlay = (_: _: {
+        zen.x86_64-linux = self.packages.x86_64-linux.default;
+      });
+    };
 }
