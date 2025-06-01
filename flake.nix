@@ -131,7 +131,7 @@
           for file in "$out"/bin/{zen,zen-bin,glxtest,updater,vaapitest}; do
             chmod u+rwx,go+rx "$file"
             patchelf --set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" "$file"
-            wrapProgram "$file" \
+            wrapProgram "$file"\
                 --set LD_LIBRARY_PATH "${pkgs.lib.makeLibraryPath runtimeLibs}"\
                 --set MOZ_LEGACY_PROFILES 1\
                 --set MOZ_ALLOW_DOWNGRADE 1\
