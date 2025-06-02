@@ -135,7 +135,8 @@
                 --set LD_LIBRARY_PATH "${pkgs.lib.makeLibraryPath runtimeLibs}"\
                 --set MOZ_LEGACY_PROFILES 1\
                 --set MOZ_ALLOW_DOWNGRADE 1\
-                --set MOZ_APP_LAUNCHER zen
+                --set MOZ_APP_LAUNCHER zen\
+                --prefix XDG_DATA_DIRS : "$GSETTINGS_SCHEMAS_PATH"
             chmod -w "$file"
           done
         '';
