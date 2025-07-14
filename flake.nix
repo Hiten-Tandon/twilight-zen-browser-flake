@@ -124,7 +124,7 @@
 
           [Desktop Action profilemanager]
           Name=Open the Profile Manager
-          Exec=zen --ProfileManager %u" > $out/share/applications/zen.desktop
+          Exec=zen --ProfileManager %u" > $out/share/applications/zen-browser.desktop
         '';
 
         fixupPhase = ''
