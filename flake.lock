@@ -59,8 +59,8 @@
     "zen-browser": {
       "flake": false,
       "locked": {
-        "lastModified": 1769299713,
-        "narHash": "sha256-ckehie34IVi774rwtGoQnXd1KmpxkRcu6aCA3yXeP/M=",
+        "lastModified": 1769395563,
+        "narHash": "sha256-Q+vsIlS16Ws4gcAgw38R85TWoFyiccN80uNgcJZgZNk=",
         "type": "tarball",
         "url": "https://github.com/zen-browser/desktop/releases/download/twilight/zen.linux-x86_64.tar.xz"
       },
