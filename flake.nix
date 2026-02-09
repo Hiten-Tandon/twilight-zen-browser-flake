@@ -59,8 +59,6 @@
           ffmpeg
           libglvnd
           pipewire
-        ]
-        ++ (with xorg; [
           libxcb
           libX11
           libXcursor
@@ -71,7 +69,7 @@
           libXdamage
           libXfixes
           libXScrnSaver
-        ]);
+        ];
       version = "twilight";
     in
     with pkgs;
