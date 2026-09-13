@@ -126,7 +126,7 @@
         '';
 
         fixupPhase = ''
-          for file in "$out"/bin/{zen,zen-bin,glxtest,updater,vaapitest}; do
+          for file in "$out"/bin/{zen,zen-bin,updater}; do
             chmod u+rwx,go+rx "$file"
             patchelf --set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" "$file"
             wrapProgram "$file"\
